@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  icon: MyString
+  small_category_id: 
+  color1: 1
+  color2: 1
+  design: 1
+  qr: MyString
+
+two:
+  name: MyString
+  icon: MyString
+  small_category_id: 
+  color1: 1
+  color2: 1
+  design: 1
+  qr: MyString

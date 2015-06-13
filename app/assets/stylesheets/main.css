@@ -1,0 +1,71 @@
+html,
+body {
+  margin:0;
+  padding:0;
+  height: 100%;
+}
+
+body {
+  background: url(background.jpeg) center center / cover no-repeat fixed;
+}
+
+h1,
+h2,
+h3,
+p {
+  line-height:1.2;
+  margin:0;
+  padding:0;
+}
+
+input {
+  border:0;
+  padding:10px;
+  line-height:1.2;
+  font-size:14px;
+  color:#222;
+  border:solid 1px #ccc;
+  margin:0 0 20px;
+  width:400px;
+  border-radius: 4px;
+  border:solid 2px #aaa;
+}
+
+input:focus {
+  outline: none;
+  border-color:#EEA34A;
+}
+
+button {
+  display:block;
+  margin:0 auto;
+  background:rgba(232,56,61,1);
+  border:1px solid #DDD;
+  color:#FFF;
+  text-shadow:0px 0px 3px rgba(0,0,0,1);
+  width:100px;
+  padding:10px 0;
+  font-size:14px;
+
+}
+
+button:hover {
+  cursor:pointer;
+  background:rgba(252,76,81,1);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background:rgba(212,36,41,1);
+}
+
+.formLabel {
+  font-size:20px;
+  color:#fff;
+  vertical-align:middle;
+  position:relative;
+  top:-8px;
+}

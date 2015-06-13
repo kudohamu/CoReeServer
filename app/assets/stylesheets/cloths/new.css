@@ -1,0 +1,13 @@
+.clothsNew {
+  display:table;
+  margin:0 auto;
+  height:100%;
+}
+
+.clothsNew__Container {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.clothsNew__formContainer {
+}

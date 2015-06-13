@@ -2,6 +2,8 @@ class Api::UserController < ApplicationController
   require 'securerandom'
 
   def login
+    crypt = ActiveSupport::MessageEncryptor.new(ENV["SECRET_KEY_BASE"])
+
     @result = "failed"
     case params["provider"]
     when "twitter" then
@@ -19,7 +21,7 @@ class Api::UserController < ApplicationController
 
         token = SecureRandom.uuid
 
-        user.token = Bcrypt::Password.create(token)
+        user.token = crypt.encrypt_and_sign(token)
         @result = if (user.save)
           token
         else
@@ -27,12 +29,12 @@ class Api::UserController < ApplicationController
         end
       else
         token = SecureRandom.uuid
-
+        crypt_token = crypt.encrypt_and_sign(token)
         user = User.create(
           name: tw_user.name,
           provider: "twitter",
           uid: params[:user_id],
-          token: Bcrypt::Password.create(token)
+          token: crypt.encrypt_and_sign(token)
         )
 
         @result = if (user)

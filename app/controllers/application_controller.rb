@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :authorize
 
   def authorize
+    crypt = ActiveSupport::MessageEncryptor.new(ENV["SECRET_KEY_BASE"])
     if (request.headers["Authorization"].present?)
       user_id = request.headers["Authorization"].split(":")[0]
       server_token = request.headers["Authorization"].split(":")[1]
@@ -15,7 +16,7 @@ class ApplicationController < ActionController::Base
       if server_token && user_id
         @current_user = User.find_by_uid(user_id)
         if (@current_user)
-          @current_user = nil unless Bcrypt::Password.new(@current_user.token) == server_token
+          @current_user = nil unless crypt.decrypt_and_verify(@current_user.token) == server_token
         end
       end
     end

@@ -6,17 +6,19 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   namespace :api do
-    resource :user, only: [] do
-      collection do
-        post :login
-      end
-
-      resources :cloths, only: [] do
-        collection do
-          post :hoge
-        end
-      end
-    end
+    post "user/login" => "user#login"
+    post "user/clothes/hoge" => "clothes#hoge"
+#    resource :user, class: User, only: [] do
+#      collection do
+#        post :login
+#      end
+#
+#      resources :cloths, only: [] do
+#        collection do
+#          post :hoge
+#        end
+#      end
+#    end
   end
 
   resources :cloths, only: [:new, :create, :show]

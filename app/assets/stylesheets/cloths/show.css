@@ -1,0 +1,99 @@
+.clothsShow {
+  display:table;
+  margin:0 auto;
+  height:100%;
+}
+
+.clothsShow__Container {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.clothsShow h1 {
+  color:#fff;
+  text-align:center;
+  margin-bottom:20px;
+  position:relative;
+  top:-10px;
+  text-shadow: 1px  1px  1px #000,
+               1px -1px  1px #000,
+              -1px  1px  1px #000,
+              -1px -1px  1px #000;
+}
+
+.clothsShow__formContainer {
+  background-color:rgba(255,255,255,0.2);
+  padding:15px;
+  border-radius:10px;
+  width:600px;
+  padding-top:30px;
+  padding-left:0px;
+  padding-right:25px;
+}
+
+.clothsShow__icon {
+}
+
+.clothsShow__iconField {
+  border:0;
+  padding:0px;
+  line-height:1.2;
+  font-size:15px;
+  color:#000;
+}
+
+.clothsShow__iconThumb {
+  width:200px;
+  height:200px;
+  border:solid 1px #ccc;
+  vertical-align:bottom;
+  margin:0 auto;
+}
+
+.clothsShow__iconThumb img {
+  width:200px;
+  height:200px;
+}
+
+.clothsShow table {
+  margin: 0 auto;
+  margin-bottom:20px;
+}
+
+.clothsShow table th {
+  text-align:right;
+  font-size:22px;
+  color:#fff;
+  position:relative;
+  text-shadow: 1px  1px  1px #000,
+               1px -1px  1px #000,
+              -1px  1px  1px #000,
+              -1px -1px  1px #000;
+}
+
+.clothsShow table td {
+  text-align:left;
+  font-size:22px;
+  color:#fff;
+  position:relative;
+  text-shadow: 1px  1px  1px #333,
+               1px -1px  1px #333,
+              -1px  1px  1px #333,
+              -1px -1px  1px #333;
+  padding-left:20px;
+}
+
+.clothsShow label {
+  margin:0;
+}
+
+.clothsShow__qr {
+  width:120px;
+  height:120px;
+  margin:0 auto;
+}
+
+.clothsShow__qr img {
+  width:120px;
+  height:120px;
+}

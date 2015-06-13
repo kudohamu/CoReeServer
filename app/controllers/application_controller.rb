@@ -7,6 +7,22 @@ class ApplicationController < ActionController::Base
 
   before_filter :authorize
 
+  @images_root_dir = "#{Rails.root}/public/uploads"
+
+  class << self
+    def get_images_root_dir
+      "#{@images_root_dir}"
+    end
+
+    def get_cloth_icon_dir
+      "#{@images_root_dir}/cloth_icons"
+    end
+
+    def get_cloth_qr_dir
+      "#{@images_root_dir}/cloth_qrs"
+    end
+  end
+
   def authorize
     crypt = ActiveSupport::MessageEncryptor.new(ENV["SECRET_KEY_BASE"])
     if (request.headers["Authorization"].present?)

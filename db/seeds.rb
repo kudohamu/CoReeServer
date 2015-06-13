@@ -321,7 +321,7 @@ Cloth.create!(
 )
 
 Cloth.all.each do |cloth|
-  qr = RQRCode::QRCode.new("/api/cloths/show/#{cloth.id}", :size => 3, :level => :h)
+  qr = RQRCode::QRCode.new("/api/cloths/#{cloth.id}", :size => 3, :level => :h)
   image = qr.as_png
 
   file_path = File.join(ApplicationController.get_cloth_qr_dir, "#{SecureRandom.uuid}.png")

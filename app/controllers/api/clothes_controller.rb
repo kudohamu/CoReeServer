@@ -1,5 +1,5 @@
 class Api::ClothesController < ApplicationController
-  before_filter :login_check
+  before_filter :login_check, except: [:show]
 
   def new
     if (params[:method] == "QR")
@@ -35,11 +35,11 @@ class Api::ClothesController < ApplicationController
 
   def show
     @cloth = Cloth.find(params[:id])
-    if (!@cloth.present?)
-      @result = "invalid_id"
-    else
+    #if (!@cloth.present?)
+      #@result = "invalid_id"
+    #else
       @result = "success"
-    end
+    #end
 
     render formats: [:json], handlers: [:jbuilder]
   end

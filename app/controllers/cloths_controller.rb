@@ -17,7 +17,7 @@ class ClothsController < ApplicationController
       image = qr.as_png
 
       file_path = File.join(ApplicationController.get_cloth_qr_dir, "#{SecureRandom.uuid}.png")
-      FileUtils.mkdir_p(file_path) unless FileTest.exist?(file_path)
+      FileUtils.mkdir_p(ApplicationController.get_cloth_qr_dir) unless FileTest.exist?(ApplicationController.get_cloth_qr_dir)
       image.resize(200, 200).save(file_path)
       @cloth.qr = File.open(file_path)
       if (@cloth.save)

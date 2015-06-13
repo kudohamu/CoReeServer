@@ -11,6 +11,7 @@ class CreateCloths < ActiveRecord::Migration
       t.string :color2
       t.string :design
       t.string :qr
+      t.integer :amount
 
       t.timestamps null: false
     end

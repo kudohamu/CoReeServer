@@ -7,7 +7,11 @@
         </div>
         <table>
           <tr>
-            <th>"ジャンル：</th>
+            <th>価格：</th>
+            <td>$<%= @cloth.amount %></td>
+          </tr>
+          <tr>
+            <th>ジャンル：</th>
             <td><%= @cloth.small_category.big_category.name %></td>
           </tr>
           <tr>

@@ -13,6 +13,10 @@
             <td><%= f.text_field :name %></td>
           </tr>
           <tr>
+            <th><%= f.label :amount, "価格：", class: "formLabel" %></th>
+            <td><%= f.text_field :amount %></td>
+          </tr>
+          <tr>
             <th><%= label :cloth, :big_category, "ジャンル：", class: "formLabel" %></th>
             <td><%= select_tag :big_category, options_for_select(BigCategory.get_categories) %></td>
           </tr>

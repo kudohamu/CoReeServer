@@ -9,7 +9,7 @@ class ClothsController < ApplicationController
   end
 
   def create
-    @cloth = Cloth.new(params.require(:cloth).permit(:icon, :name, :color1, :color2, :design))
+    @cloth = Cloth.new(params.require(:cloth).permit(:icon, :name, :color1, :color2, :design, :amount))
     @cloth.small_category = SmallCategory.find_by_name(params[:cloth][:small_category])
 
     if (@cloth.save)

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150612210418) do
     t.string   "color2"
     t.string   "design"
     t.string   "qr"
+    t.integer  "amount"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

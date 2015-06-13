@@ -29,14 +29,17 @@ class Api::ClothesController < ApplicationController
       UsersCloth.create!(user: @current_user, cloth: cloth)
       @result = cloth.id
     end
+
+    render formats: [:json], handlers: [:jbuilder]
   end
 
-  def hoge
-    cloth = Cloth.create(
-      name: "ほげ"
-    )
-
-    @result = if(cloth) then "success" else "failed" end
+  def show
+    @cloth = Cloth.find(params[:id])
+    if (!@cloth.present?)
+      @result = "invalid_id"
+    else
+      @result = "success"
+    end
 
     render formats: [:json], handlers: [:jbuilder]
   end

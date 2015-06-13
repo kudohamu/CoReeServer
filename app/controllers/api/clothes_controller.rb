@@ -43,4 +43,20 @@ class Api::ClothesController < ApplicationController
 
     render formats: [:json], handlers: [:jbuilder]
   end
+
+  def recommendation
+    #トップスから1つ
+    @tops = @current_user.cloths.where(small_category_id: [1000..1007]).sample
+    #ジャケットから1つ
+    @jacket = @current_user.cloths.where(small_category_id: [2000..2014]).sample
+    #パンツから1つ
+    @pants = @current_user.cloths.where(small_category_id: [3000..3007]).sample
+    #シューズから1つ
+    @shoes = @current_user.cloths.where(small_category_id: [6000..6006]).sample
+    #キャップから1つ
+    @cap = @current_user.cloths.where(small_category_id: [7000..7006]).sample
+
+    @cloths = [@tops, @jacket, @pants, @shoes, @cap]
+    render formats: [:json], handlers: [:jbuilder]
+  end
 end

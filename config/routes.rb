@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     post "user/login" => "user#login"
     get "cloths/:id" => "clothes#show"
     post "user/cloths/new" => "clothes#new"
+    get "user/cloths/recommendation" => "clothes#recommendation"
 #    resource :user, class: User, only: [] do
 #      collection do
 #        post :login

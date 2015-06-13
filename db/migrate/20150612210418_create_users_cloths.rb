@@ -3,6 +3,7 @@ class CreateUsersCloths < ActiveRecord::Migration
     create_table :users_cloths do |t|
       t.references :user, index: true, foreign_key: true
       t.references :cloth, index: true, foreign_key: true
+      t.boolean :buy
 
       t.timestamps null: false
     end

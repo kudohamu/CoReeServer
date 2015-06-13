@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150612210418) do
   create_table "users_cloths", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "cloth_id"
+    t.boolean  "buy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

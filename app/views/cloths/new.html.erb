@@ -1,15 +1,43 @@
 <div class="clothsNew">
   <div class="clothsNew__Container">
+    <h1>商品を追加</h1>
     <div class="clothsNew__formContainer">
       <%= form_for @cloth do |f| %>
+        <div class="clothsNew__icon">
+          <div class="clothsNew__iconThumb"><img src=""></div><br />
+          <%= f.file_field :icon, class: "clothsNew__iconField" %><br />
+        </div>
         <table>
           <tr>
             <th><%= f.label :name, "商品名：", class: "formLabel" %></th>
             <td><%= f.text_field :name %></td>
           </tr>
           <tr>
+            <th><%= f.label :amount, "価格：", class: "formLabel" %></th>
+            <td><%= f.text_field :amount %></td>
+          </tr>
+          <tr>
+            <th><%= label :cloth, :big_category, "ジャンル：", class: "formLabel" %></th>
+            <td><%= select_tag :big_category, options_for_select(BigCategory.get_categories) %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :small_category, "小ジャンル：", class: "formLabel" %></th>
+            <td><%= f.select :small_category, SmallCategory.where(big_category_id: 1).pluck(:name) %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :color1, "メインカラー１：", class: "formLabel" %></th>
+            <td><%= f.select :color1, Cloth.get_colors %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :color2, "メインカラー２（オプション）：", class: "formLabel" %></th>
+            <td><%= f.select :color2, Cloth.get_colors.unshift("なし") %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :design, "柄：", class: "formLabel" %></th>
+            <td><%= f.select :design, Cloth.get_designs %></td>
           </tr>
         </table>
+        <%= f.submit "作成", class: "formButton" %>
       <% end %>
     </div>
   </div>

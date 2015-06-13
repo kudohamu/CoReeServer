@@ -1,0 +1,39 @@
+<div class="clothsShow">
+  <div class="clothsShow__Container">
+    <h1><%= @cloth.name %></h1>
+    <div class="clothsShow__formContainer">
+        <div class="clothsShow__icon">
+          <div class="clothsShow__iconThumb"><%= image_tag(@cloth.icon.url)%></div><br />
+        </div>
+        <table>
+          <tr>
+            <th>価格：</th>
+            <td>$<%= @cloth.amount %></td>
+          </tr>
+          <tr>
+            <th>ジャンル：</th>
+            <td><%= @cloth.small_category.big_category.name %></td>
+          </tr>
+          <tr>
+            <th>小ジャンル：</th>
+            <td><%= @cloth.small_category.name %></td>
+          </tr>
+          <tr>
+            <th>メインカラー１：</th>
+            <td><%= @cloth.color1 %></td>
+          </tr>
+          <tr>
+            <th>メインカラー２：</th>
+            <td><%= @cloth.color2 %></td>
+          </tr>
+          <tr>
+            <th>柄：</th>
+            <td><%= @cloth.design %></td>
+          </tr>
+        </table>
+        <div class="clothsShow__qr">
+          <%= image_tag(@cloth.qr.url) %>
+        </div>
+    </div>
+  </div>
+</div>

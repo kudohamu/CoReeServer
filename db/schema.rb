@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 20150612210418) do
     t.string   "name"
     t.string   "icon"
     t.integer  "small_category_id"
-    t.integer  "color1"
-    t.integer  "color2"
-    t.integer  "design"
+    t.string   "color1"
+    t.string   "color2"
+    t.string   "design"
     t.string   "qr"
+    t.integer  "amount"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

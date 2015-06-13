@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  #
+
+  root "cloths#new"
   
   namespace :api do
     post "user/login" => "user#login"
-    post "user/clothes/hoge" => "clothes#hoge"
+    post "user/cloths/hoge" => "clothes#hoge"
 #    resource :user, class: User, only: [] do
 #      collection do
 #        post :login

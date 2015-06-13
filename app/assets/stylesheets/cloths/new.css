@@ -9,5 +9,57 @@
   vertical-align:middle;
 }
 
+.clothsNew h1 {
+  color:#fff;
+  text-align:center;
+  margin-bottom:20px;
+  position:relative;
+  top:-10px;
+  text-shadow: 1px  1px  1px #000,
+               1px -1px  1px #000,
+              -1px  1px  1px #000,
+              -1px -1px  1px #000;
+}
+
 .clothsNew__formContainer {
+  background-color:rgba(255,255,255,0.2);
+  padding:15px;
+  border-radius:10px;
+}
+
+.clothsNew__icon {
+  margin:0 auto;
+  width:120px;
+}
+
+.clothsNew__iconField {
+  border:0;
+  padding:0px;
+  line-height:1.2;
+  font-size:15px;
+  color:#000;
+}
+
+.clothsNew__iconThumb {
+  width:200px;
+  height:200px;
+  border:solid 1px #ccc;
+  vertical-align:bottom;
+}
+
+.clothsNew__iconThumb img {
+  width:200px;
+  height:200px;
+}
+
+.clothsNew table th {
+  text-align:right;
+}
+
+.clothsNew table td {
+  text-align:left;
+}
+
+.clothsNew label {
+  margin:0;
 }

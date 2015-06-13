@@ -13,7 +13,7 @@ class ClothsController < ApplicationController
     @cloth.small_category = SmallCategory.find_by_name(params[:cloth][:small_category])
 
     if (@cloth.save)
-      qr = RQRCode::QRCode.new("/api/cloths/show/#{@cloth.id}", :size => 3, :level => :h)
+      qr = RQRCode::QRCode.new("/api/cloths/#{@cloth.id}", :size => 3, :level => :h)
       image = qr.as_png
 
       file_path = File.join(ApplicationController.get_cloth_qr_dir, "#{SecureRandom.uuid}.png")

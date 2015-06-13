@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :api do
     post "user/login" => "user#login"
     post "user/cloths/hoge" => "clothes#hoge"
+    post "user/cloths/new" => "clothes#new"
 #    resource :user, class: User, only: [] do
 #      collection do
 #        post :login

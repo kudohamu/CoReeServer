@@ -37,6 +37,7 @@ gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'rqrcode_png'
+gem 'fog'
 
 group :development, :test do
 	gem 'sqlite3'

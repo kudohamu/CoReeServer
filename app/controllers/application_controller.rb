@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :authorize
 
-  @images_root_dir = "#{Rails.root}/public/uploads"
+  @images_root_dir = "coree/uploads"
 
   class << self
     def get_images_root_dir
